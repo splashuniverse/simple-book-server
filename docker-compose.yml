@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: reservation
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: reservation
+      TZ: Asia/Seoul
+      MYSQL_CHARSET: utf8mb4
+    ports:
+      - '3307:3306'
+    command: --character-set-server=utf8mb4
+      --collation-server=utf8mb4_unicode_ci
+      --default-time-zone='Asia/Seoul'
